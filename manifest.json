@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "BBB Free Auto-Downloader",
+  "version": "1.5.3",
+  "description": "Automatically downloads all free resources from BuiltByBit Free categories.",
+  "minimum_chrome_version": "102",
+  "permissions": [
+    "storage",
+    "downloads",
+    "scripting",
+    "tabs",
+    "alarms"
+  ],
+  "host_permissions": [
+    "https://builtbybit.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "BBB Free Auto-Downloader"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://builtbybit.com/*"
+      ],
+      "js": [
+        "config.js",
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

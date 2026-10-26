@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { width: 330px; margin: 0; font: 13px/1.45 system-ui, sans-serif; color: #222; background: #fafbfc; }
+    .head { padding: 10px 12px; background: #1b1f24; color: #fff; font-weight: 600; }
+    .body { padding: 12px; }
+    .row { display: flex; gap: 8px; margin-bottom: 10px; }
+    .btn { flex: 1; padding: 8px 6px; border: 0; border-radius: 6px; cursor: pointer; font-size: 13px; }
+    .btn:disabled { opacity: .45; cursor: default; }
+    .btn-green { background: #27ae60; color: #fff; }
+    .btn-blue { background: #2980b9; color: #fff; }
+    .btn-red { background: #c0392b; color: #fff; }
+    .btn-gray { background: #7f8c8d; color: #fff; }
+    #status { background: #fff; border: 1px solid #ddd; border-radius: 6px; padding: 8px 10px; margin-bottom: 10px; white-space: pre-wrap; word-break: break-word; max-height: 130px; overflow: auto; }
+    #errors { background: #fff7f5; border: 1px solid #f0c9c0; border-radius: 6px; padding: 8px 10px; font-size: 12px; max-height: 150px; overflow: auto; display: none; }
+    .hint { color: #888; font-size: 11px; margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="head">BBB Free Auto-Downloader</div>
+  <div class="body">
+    <div class="row">
+      <button id="start" class="btn btn-green">Start / Resume</button>
+      <button id="stop" class="btn btn-red">Stop</button>
+    </div>
+    <div id="status">Loading state…</div>
+    <div class="row">
+      <button id="reset" class="btn btn-gray">Reset</button>
+      <button id="export" class="btn btn-blue">Export .txt</button>
+    </div>
+    <div id="errors"></div>
+    <div class="hint">The main interface is the BBB panel on the page itself. Start runs in a Free category (log in first). If a run was stopped, Start resumes from the saved page.</div>
+  </div>
+  <script src="config.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
